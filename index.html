@@ -4,177 +4,569 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sijillee - Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Sijillee accounting application">
     <style>
-        body { font-family: -apple-system, system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px; }
-        h2 { color: #1f2937; margin-top: 30px; }
-        .lang { text-align: center; margin: 20px 0; }
-        .lang a { padding: 10px 20px; margin: 5px; border: 2px solid #2563eb; border-radius: 8px; text-decoration: none; display: inline-block; }
-        .lang a.active { background: #2563eb; color: white; }
-        .box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 15px; border-radius: 8px; margin: 15px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        th, td { padding: 10px; border: 1px solid #e5e7eb; text-align: left; }
-        th { background: #f3f4f6; }
-        .ar { direction: rtl; text-align: right; display: none; }
-        .ar table th, .ar table td { text-align: right; }
-        .en { display: block; }
-        ul.check li::before { content: "✅ "; }
-        ul.cross li::before { content: "❌ "; }
-        ul.check, ul.cross { list-style: none; padding-left: 0; }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-ar {
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .lang-switch {
+            margin-top: 1.5rem;
+        }
+        
+        .lang-btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            margin: 0.25rem;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .lang-btn:not(.active) {
+            color: var(--primary);
+        }
+        
+        .lang-btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+        }
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        .content[dir="rtl"] {
+            text-align: right;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .last-updated {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        [dir="rtl"] ul, [dir="rtl"] ol {
+            padding-left: 0;
+            padding-right: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        
+        [dir="rtl"] th, [dir="rtl"] td {
+            text-align: right;
+        }
+        
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .highlight-box.warning {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+        
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .check-list {
+            padding-right: 0;
+        }
+        
+        .check-list li {
+            padding-left: 1.75rem;
+            position: relative;
+        }
+        
+        [dir="rtl"] .check-list li {
+            padding-left: 0;
+            padding-right: 1.75rem;
+        }
+        
+        .check-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        [dir="rtl"] .check-list li::before {
+            left: auto;
+            right: 0;
+        }
+        
+        .cross-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .cross-list {
+            padding-right: 0;
+        }
+        
+        .cross-list li {
+            padding-left: 1.75rem;
+            position: relative;
+        }
+        
+        [dir="rtl"] .cross-list li {
+            padding-left: 0;
+            padding-right: 1.75rem;
+        }
+        
+        .cross-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+        
+        [dir="rtl"] .cross-list li::before {
+            left: auto;
+            right: 0;
+        }
+        
+        .contact-box {
+            background: #f3f4f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-box a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            table {
+                font-size: 0.875rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 style="text-align:center;">Sijillee سِجِلّي</h1>
-    <p style="text-align:center;">Smart Double-Entry Accounting</p>
+    <div class="container">
+        <header>
+            <div class="logo">Sijillee</div>
+            <div class="logo-ar">سِجِلّي</div>
+            <p>Smart Double-Entry Accounting</p>
+            
+            <div class="lang-switch">
+                <a href="#" class="lang-btn active" onclick="switchLang('en'); return false;">English</a>
+                <a href="#" class="lang-btn" onclick="switchLang('ar'); return false;">العربية</a>
+            </div>
+        </header>
+        
+        <!-- English Content -->
+        <div id="content-en" class="content active" dir="ltr">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: January 13, 2026</p>
+            
+            <p>Sijillee ("we", "our", or "us") operates the Sijillee mobile application (the "App"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our App.</p>
+            
+            <h2>1. Information We Collect</h2>
+            
+            <h3>1.1 Account Information</h3>
+            <p>When you create an account, we collect:</p>
+            <ul>
+                <li><strong>Full Name</strong> - To personalize your experience</li>
+                <li><strong>Email Address</strong> - For account authentication and communication</li>
+                <li><strong>Phone Number</strong> (optional) - For account recovery and support</li>
+                <li><strong>Business Name</strong> - To customize your invoices and reports</li>
+            </ul>
+            
+            <h3>1.2 Business Data</h3>
+            <div class="highlight-box">
+                <strong>Important:</strong> All business data (invoices, customers, products) is stored locally on your device by default. Cloud sync is only available for paid subscribers and requires explicit opt-in.
+            </div>
+            
+            <h3>1.3 App Installation Identifier</h3>
+            <p>We generate a <strong>random unique identifier (UUID)</strong> when you first install the App. This identifier:</p>
+            <ul class="check-list">
+                <li>Is NOT derived from your device hardware</li>
+                <li>Is NOT linked to any advertising ID</li>
+                <li>Is NOT shared with third parties</li>
+                <li>Is used ONLY to enforce subscription device limits</li>
+                <li>Can be reset by uninstalling and reinstalling the App</li>
+            </ul>
+            
+            <h2>2. How We Use Your Information</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Email & Name</td>
+                        <td>Account authentication, support</td>
+                    </tr>
+                    <tr>
+                        <td>Business Data</td>
+                        <td>Provide accounting features</td>
+                    </tr>
+                    <tr>
+                        <td>Device Name</td>
+                        <td>Display in your devices list</td>
+                    </tr>
+                    <tr>
+                        <td>Installation ID</td>
+                        <td>Enforce device limits per subscription</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>We do NOT:</h3>
+            <ul class="cross-list">
+                <li>Sell your data to third parties</li>
+                <li>Use your data for advertising</li>
+                <li>Track you across other apps</li>
+                <li>Share your financial data with anyone</li>
+                <li>Use device fingerprinting or hardware IDs</li>
+            </ul>
+            
+            <h2>3. Data Storage & Security</h2>
+            
+            <h3>3.1 Local Storage (Default)</h3>
+            <ul>
+                <li>All business data is stored locally using encrypted SQLite database</li>
+                <li>Authentication tokens are stored in secure storage</li>
+                <li>We cannot access your local data</li>
+            </ul>
+            
+            <h3>3.2 Cloud Storage (Paid Subscribers Only)</h3>
+            <ul>
+                <li>Data is encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
+                <li>You can delete all cloud data at any time from Settings</li>
+            </ul>
+            
+            <h2>4. Device Limits & Identification</h2>
+            
+            <div class="highlight-box">
+                <h3>Our Privacy-Friendly Approach</h3>
+                <p>We use an <strong>app-generated random identifier</strong> instead of hardware fingerprinting:</p>
+                <ul class="check-list">
+                    <li>Generate a random UUID when you install the app</li>
+                    <li>Store this UUID securely on your device</li>
+                    <li>New install = New ID (you can reset by reinstalling)</li>
+                </ul>
+            </div>
+            
+            <h2>5. Your Rights</h2>
+            <ul>
+                <li><strong>Access</strong> - View all data stored via Settings > My Data</li>
+                <li><strong>Delete</strong> - Delete local data, cloud data, or entire account</li>
+                <li><strong>Export</strong> - Export invoices and reports</li>
+                <li><strong>Opt-Out</strong> - Disable analytics and cloud sync</li>
+            </ul>
+            
+            <h2>6. Children's Privacy</h2>
+            <p>Sijillee is a business accounting application and is not intended for use by children under 13 years of age.</p>
+            
+            <h2>7. Contact Us</h2>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:privacy@sijillee.com">privacy@sijillee.com</a></p>
+                <p><strong>Website:</strong> <a href="https://sijillee.com/contact">https://sijillee.com/contact</a></p>
+            </div>
+            
+            <h2>8. Consent</h2>
+            <p>By using Sijillee, you consent to this Privacy Policy.</p>
+        </div>
+        
+        <!-- Arabic Content -->
+        <div id="content-ar" class="content" dir="rtl">
+            <h1>سياسة الخصوصية</h1>
+            <p class="last-updated">آخر تحديث: 13 يناير 2026</p>
+            
+            <p>تُشغّل سِجِلّي ("نحن" أو "لنا") تطبيق سِجِلّي للهاتف المحمول ("التطبيق"). تُعلمك هذه الصفحة بسياساتنا المتعلقة بجمع واستخدام والإفصاح عن البيانات الشخصية عند استخدامك لتطبيقنا.</p>
+            
+            <h2>1. المعلومات التي نجمعها</h2>
+            
+            <h3>1.1 معلومات الحساب</h3>
+            <p>عند إنشاء حساب، نجمع:</p>
+            <ul>
+                <li><strong>الاسم الكامل</strong> - لتخصيص تجربتك</li>
+                <li><strong>البريد الإلكتروني</strong> - للمصادقة والتواصل</li>
+                <li><strong>رقم الهاتف</strong> (اختياري) - لاستعادة الحساب والدعم</li>
+                <li><strong>اسم النشاط التجاري</strong> - لتخصيص فواتيرك وتقاريرك</li>
+            </ul>
+            
+            <h3>1.2 بيانات العمل</h3>
+            <div class="highlight-box">
+                <strong>مهم:</strong> جميع بيانات العمل (الفواتير، العملاء، المنتجات) تُخزّن محلياً على جهازك افتراضياً. المزامنة السحابية متاحة فقط للمشتركين المدفوعين.
+            </div>
+            
+            <h3>1.3 معرّف تثبيت التطبيق</h3>
+            <p>نُنشئ <strong>معرّفاً فريداً عشوائياً (UUID)</strong> عند تثبيت التطبيق لأول مرة:</p>
+            <ul class="check-list">
+                <li>ليس مُشتقاً من عتاد جهازك</li>
+                <li>ليس مرتبطاً بأي معرّف إعلاني</li>
+                <li>لا يُشارك مع أطراف ثالثة</li>
+                <li>يُستخدم فقط لتطبيق حدود الأجهزة</li>
+                <li>يمكن إعادة تعيينه بإعادة تثبيت التطبيق</li>
+            </ul>
+            
+            <h2>2. كيف نستخدم معلوماتك</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>البيانات</th>
+                        <th>الغرض</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>البريد والاسم</td>
+                        <td>مصادقة الحساب والدعم</td>
+                    </tr>
+                    <tr>
+                        <td>بيانات العمل</td>
+                        <td>توفير ميزات المحاسبة</td>
+                    </tr>
+                    <tr>
+                        <td>اسم الجهاز</td>
+                        <td>العرض في قائمة أجهزتك</td>
+                    </tr>
+                    <tr>
+                        <td>معرّف التثبيت</td>
+                        <td>تطبيق حدود الأجهزة</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>نحن لا:</h3>
+            <ul class="cross-list">
+                <li>نبيع بياناتك لأطراف ثالثة</li>
+                <li>نستخدم بياناتك للإعلانات</li>
+                <li>نتتبعك عبر تطبيقات أخرى</li>
+                <li>نشارك بياناتك المالية مع أي شخص</li>
+                <li>نستخدم بصمات الأجهزة أو معرّفات العتاد</li>
+            </ul>
+            
+            <h2>3. تخزين البيانات والأمان</h2>
+            
+            <h3>3.1 التخزين المحلي (الافتراضي)</h3>
+            <ul>
+                <li>جميع البيانات تُخزّن محلياً باستخدام قاعدة بيانات مشفرة</li>
+                <li>رموز المصادقة تُخزّن في التخزين الآمن</li>
+                <li>لا يمكننا الوصول إلى بياناتك المحلية</li>
+            </ul>
+            
+            <h3>3.2 التخزين السحابي (للمشتركين فقط)</h3>
+            <ul>
+                <li>البيانات مشفرة أثناء النقل (TLS 1.3) والتخزين (AES-256)</li>
+                <li>يمكنك حذف البيانات السحابية في أي وقت</li>
+            </ul>
+            
+            <h2>4. حدود الأجهزة</h2>
+            
+            <div class="highlight-box">
+                <h3>نهجنا الصديق للخصوصية</h3>
+                <p>نستخدم <strong>معرّفاً عشوائياً</strong> بدلاً من بصمات العتاد:</p>
+                <ul class="check-list">
+                    <li>ننشئ UUID عشوائياً عند التثبيت</li>
+                    <li>نخزنه بأمان على جهازك</li>
+                    <li>تثبيت جديد = معرّف جديد</li>
+                </ul>
+            </div>
+            
+            <h2>5. حقوقك</h2>
+            <ul>
+                <li><strong>الوصول</strong> - عرض البيانات عبر الإعدادات > بياناتي</li>
+                <li><strong>الحذف</strong> - حذف البيانات المحلية أو السحابية أو الحساب</li>
+                <li><strong>التصدير</strong> - تصدير الفواتير والتقارير</li>
+                <li><strong>إلغاء الاشتراك</strong> - تعطيل التحليلات والمزامنة</li>
+            </ul>
+            
+            <h2>6. خصوصية الأطفال</h2>
+            <p>سِجِلّي تطبيق محاسبة تجارية وليس مخصصاً للأطفال دون 13 عاماً.</p>
+            
+            <h2>7. اتصل بنا</h2>
+            <div class="contact-box">
+                <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@sijillee.com">privacy@sijillee.com</a></p>
+                <p><strong>الموقع:</strong> <a href="https://sijillee.com/contact">https://sijillee.com/contact</a></p>
+            </div>
+            
+            <h2>8. الموافقة</h2>
+            <p>باستخدام سِجِلّي، فإنك توافق على سياسة الخصوصية هذه.</p>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Sijillee. All rights reserved.</p>
+            <p>سِجِلّي - نظام المحاسبة الذكي</p>
+        </footer>
+    </div>
     
-    <div class="lang">
-        <a href="#" id="btn-en" class="active" onclick="showEn()">English</a>
-        <a href="#" id="btn-ar" onclick="showAr()">العربية</a>
-    </div>
-
-    <div class="en" id="content-en">
-        <h1>Privacy Policy</h1>
-        <p><em>Last Updated: January 13, 2026</em></p>
-        
-        <h2>1. Information We Collect</h2>
-        <p>When you create an account, we collect:</p>
-        <ul>
-            <li><strong>Full Name</strong> - To personalize your experience</li>
-            <li><strong>Email Address</strong> - For authentication and communication</li>
-            <li><strong>Phone Number</strong> (optional) - For account recovery</li>
-            <li><strong>Business Name</strong> - To customize invoices</li>
-        </ul>
-        
-        <div class="box">
-            <strong>Important:</strong> All business data is stored locally on your device by default. Cloud sync requires explicit opt-in.
-        </div>
-        
-        <h3>Device Identifier</h3>
-        <p>We generate a <strong>random UUID</strong> when you install the app:</p>
-        <ul class="check">
-            <li>NOT derived from device hardware</li>
-            <li>NOT linked to advertising ID</li>
-            <li>NOT shared with third parties</li>
-            <li>Used ONLY for device limits</li>
-            <li>Reset by reinstalling the app</li>
-        </ul>
-        
-        <h2>2. What We DON'T Do</h2>
-        <ul class="cross">
-            <li>Sell your data to third parties</li>
-            <li>Use your data for advertising</li>
-            <li>Track you across other apps</li>
-            <li>Share your financial data</li>
-            <li>Use hardware fingerprinting</li>
-        </ul>
-        
-        <h2>3. Data Security</h2>
-        <table>
-            <tr><th>Storage</th><th>Security</th></tr>
-            <tr><td>Local Data</td><td>Encrypted SQLite + Secure Storage</td></tr>
-            <tr><td>Cloud Data (Pro)</td><td>TLS 1.3 + AES-256 encryption</td></tr>
-            <tr><td>Tokens</td><td>Android Keystore / iOS Keychain</td></tr>
-        </table>
-        
-        <h2>4. Your Rights</h2>
-        <ul>
-            <li><strong>Access</strong> - View data in Settings</li>
-            <li><strong>Delete</strong> - Delete local/cloud data or account</li>
-            <li><strong>Export</strong> - Export invoices as PDF</li>
-            <li><strong>Opt-out</strong> - Disable analytics in Settings</li>
-        </ul>
-        
-        <h2>5. Children's Privacy</h2>
-        <p>Sijillee is a business app not intended for children under 13.</p>
-        
-        <h2>6. Contact Us</h2>
-        <p>Email: <a href="mailto:privacy@sijillee.com">privacy@sijillee.com</a><br>
-        Website: <a href="https://sijillee.com">sijillee.com</a></p>
-        
-        <p><strong>By using Sijillee, you consent to this Privacy Policy.</strong></p>
-    </div>
-
-    <div class="ar" id="content-ar">
-        <h1>سياسة الخصوصية</h1>
-        <p><em>آخر تحديث: 13 يناير 2026</em></p>
-        
-        <h2>1. المعلومات التي نجمعها</h2>
-        <p>عند إنشاء حساب، نجمع:</p>
-        <ul>
-            <li><strong>الاسم الكامل</strong> - لتخصيص تجربتك</li>
-            <li><strong>البريد الإلكتروني</strong> - للمصادقة والتواصل</li>
-            <li><strong>رقم الهاتف</strong> (اختياري) - لاستعادة الحساب</li>
-            <li><strong>اسم النشاط التجاري</strong> - لتخصيص الفواتير</li>
-        </ul>
-        
-        <div class="box">
-            <strong>مهم:</strong> جميع بيانات العمل تُخزّن محلياً على جهازك افتراضياً. المزامنة السحابية تتطلب موافقة صريحة.
-        </div>
-        
-        <h3>معرّف الجهاز</h3>
-        <p>نُنشئ <strong>UUID عشوائياً</strong> عند تثبيت التطبيق:</p>
-        <ul class="check">
-            <li>ليس مُشتقاً من عتاد الجهاز</li>
-            <li>ليس مرتبطاً بمعرّف إعلاني</li>
-            <li>لا يُشارك مع أطراف ثالثة</li>
-            <li>يُستخدم فقط لحدود الأجهزة</li>
-            <li>يُعاد تعيينه بإعادة تثبيت التطبيق</li>
-        </ul>
-        
-        <h2>2. ما لا نفعله</h2>
-        <ul class="cross">
-            <li>بيع بياناتك لأطراف ثالثة</li>
-            <li>استخدام بياناتك للإعلانات</li>
-            <li>تتبعك عبر تطبيقات أخرى</li>
-            <li>مشاركة بياناتك المالية</li>
-            <li>استخدام بصمات العتاد</li>
-        </ul>
-        
-        <h2>3. أمان البيانات</h2>
-        <table>
-            <tr><th>التخزين</th><th>الأمان</th></tr>
-            <tr><td>البيانات المحلية</td><td>SQLite مشفر + تخزين آمن</td></tr>
-            <tr><td>البيانات السحابية</td><td>TLS 1.3 + تشفير AES-256</td></tr>
-            <tr><td>الرموز</td><td>Android Keystore / iOS Keychain</td></tr>
-        </table>
-        
-        <h2>4. حقوقك</h2>
-        <ul>
-            <li><strong>الوصول</strong> - عرض البيانات في الإعدادات</li>
-            <li><strong>الحذف</strong> - حذف البيانات المحلية/السحابية أو الحساب</li>
-            <li><strong>التصدير</strong> - تصدير الفواتير كـ PDF</li>
-            <li><strong>إلغاء الاشتراك</strong> - تعطيل التحليلات</li>
-        </ul>
-        
-        <h2>5. خصوصية الأطفال</h2>
-        <p>سِجِلّي تطبيق أعمال وليس مخصصاً للأطفال دون 13 عاماً.</p>
-        
-        <h2>6. اتصل بنا</h2>
-        <p>البريد: <a href="mailto:privacy@sijillee.com">privacy@sijillee.com</a><br>
-        الموقع: <a href="https://sijillee.com">sijillee.com</a></p>
-        
-        <p><strong>باستخدام سِجِلّي، فإنك توافق على سياسة الخصوصية هذه.</strong></p>
-    </div>
-
-    <footer style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid #e5e7eb; color:#6b7280;">
-        <p>© 2026 Sijillee. All rights reserved.</p>
-    </footer>
-
     <script>
-        function showEn() {
-            document.getElementById('content-en').style.display = 'block';
-            document.getElementById('content-ar').style.display = 'none';
-            document.getElementById('btn-en').classList.add('active');
-            document.getElementById('btn-ar').classList.remove('active');
-            return false;
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Update URL hash
+            window.location.hash = lang;
         }
-        function showAr() {
-            document.getElementById('content-ar').style.display = 'block';
-            document.getElementById('content-en').style.display = 'none';
-            document.getElementById('btn-ar').classList.add('active');
-            document.getElementById('btn-en').classList.remove('active');
-            return false;
-        }
+        
+        // Check URL hash on load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'ar') {
+                switchLang('ar');
+                document.querySelectorAll('.lang-btn')[1].classList.add('active');
+                document.querySelectorAll('.lang-btn')[0].classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
